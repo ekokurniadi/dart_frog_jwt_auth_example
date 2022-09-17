@@ -1,5 +1,5 @@
 import 'package:dart_frog/dart_frog.dart';
-import 'package:hallo/jwt/jwt_service.dart';
+import 'package:hallo/core/jwt/jwt_service.dart';
 
 final JwtService jwtService = JwtServiceImpl();
 
