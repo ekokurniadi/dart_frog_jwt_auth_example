@@ -5,7 +5,7 @@ import 'package:dart_frog/dart_frog.dart';
 class ResponseHelper {
   const ResponseHelper._();
 
-  static Future<Response> response({
+  static Future<Response> json({
     required int status,
     required String message,
     required dynamic body,
@@ -32,7 +32,7 @@ class ResponseHelper {
   }
 
   static Future<Response> methodNotAllowed() async {
-    return ResponseHelper.response(
+    return ResponseHelper.json(
       status: HttpStatus.methodNotAllowed,
       message: 'Method Not Allowed',
       body: null,
@@ -40,7 +40,7 @@ class ResponseHelper {
   }
 
   static Future<Response> unAuthorized() async {
-    return ResponseHelper.response(
+    return ResponseHelper.json(
       status: HttpStatus.unauthorized,
       message: 'UnAuthorized',
       body: null,
@@ -48,8 +48,19 @@ class ResponseHelper {
   }
 
   static Future<Response> badRequest({required String message}) async {
-    return ResponseHelper.response(
+    return ResponseHelper.json(
       status: HttpStatus.badRequest,
+      message: message,
+      body: null,
+    );
+  }
+
+  static Future<Response> abortWithStatus({
+    required int status,
+    required String message,
+  }) async {
+    return ResponseHelper.json(
+      status: status,
       message: message,
       body: null,
     );

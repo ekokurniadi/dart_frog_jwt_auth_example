@@ -24,7 +24,7 @@ Future<Response> _getAllUsers(RequestContext context) async {
     return ResponseHelper.unAuthorized();
   } else {
     final users = await getAllUsersUsescase();
-    return ResponseHelper.response(
+    return ResponseHelper.json(
       status: HttpStatus.ok,
       message: 'Successfully get all Users',
       body: users,

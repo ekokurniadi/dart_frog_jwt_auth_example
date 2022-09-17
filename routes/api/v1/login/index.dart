@@ -30,12 +30,11 @@ Future<Response> onRequest(RequestContext context) async {
   if (ContentTypeHelper.contentTypeAsJson(context)) {
     if (requestMethod.isPost) {
       return loggedinUser.isEmpty
-          ? ResponseHelper.response(
+          ? ResponseHelper.abortWithStatus(
               status: HttpStatus.ok,
               message: 'User not found',
-              body: null,
             )
-          : ResponseHelper.response(
+          : ResponseHelper.json(
               status: HttpStatus.ok,
               message: 'Login Successfully',
               token: token,
