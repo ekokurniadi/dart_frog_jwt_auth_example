@@ -27,7 +27,8 @@ Future<Response> onRequest(RequestContext context) async {
   final token = await middleWareService.generateToken({
     'id': loggedinUser.isEmpty ? randomNumber : loggedinUser.first.id,
   });
-  if (ContentTypeHelper.contentTypeAsJson(context)) {
+
+  if (ContentTypeHelper.identify(context) == ContentType.json) {
     if (requestMethod.isPost) {
       return loggedinUser.isEmpty
           ? ResponseHelper.abortWithStatus(
