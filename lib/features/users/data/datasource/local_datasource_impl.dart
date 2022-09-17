@@ -1,5 +1,5 @@
-import 'package:hallo/users/data/datasource/local_datasource.dart';
-import 'package:hallo/users/data/models/user_model.dart';
+import 'package:hallo/features/users/data/datasource/local_datasource.dart';
+import 'package:hallo/features/users/data/models/user_model.dart';
 
 class LocalDataSourceImpl extends LocalDataSource {
   @override

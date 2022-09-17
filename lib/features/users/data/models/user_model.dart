@@ -1,4 +1,4 @@
-import 'package:hallo/users/domain/entity/user_entity.dart';
+import 'package:hallo/features/users/domain/entity/user_entity.dart';
 
 class UserModel extends UserEntity {
   const UserModel({

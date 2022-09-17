@@ -1,6 +1,6 @@
-import 'package:hallo/users/data/models/user_model.dart';
-import 'package:hallo/users/data/repositories/user_repository_impl.dart';
-import 'package:hallo/users/domain/repositories/user_repository.dart';
+import 'package:hallo/features/users/data/models/user_model.dart';
+import 'package:hallo/features/users/data/repositories/user_repository_impl.dart';
+import 'package:hallo/features/users/domain/repositories/user_repository.dart';
 
 class GetAllUsers {
   final UserRepository userRepository = UserRepositoryImpl();
