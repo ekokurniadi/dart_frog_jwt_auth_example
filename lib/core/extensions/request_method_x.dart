@@ -1,9 +1,9 @@
 import 'package:dart_frog/dart_frog.dart';
 
-extension RequestMethodX on HttpMethod {
-  bool get isGet => this == HttpMethod.get;
-  bool get isPost => this == HttpMethod.post;
-  bool get isPut => this == HttpMethod.put;
-  bool get isDelete => this == HttpMethod.delete;
-  bool get isOptions => this == HttpMethod.options;
+extension RequestMethodX on RequestContext {
+  bool get HttpMethodGet => request.method == HttpMethod.get;
+  bool get HttpMethodPost => request.method == HttpMethod.post;
+  bool get HttpMethodPut => request.method == HttpMethod.put;
+  bool get HttpMethodDelete => request.method == HttpMethod.delete;
+  bool get HttpMethodOptions => request.method == HttpMethod.options;
 }

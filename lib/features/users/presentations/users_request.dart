@@ -1,25 +1,19 @@
 import 'dart:io';
 import 'package:dart_frog/dart_frog.dart';
-import 'package:hallo/core/extensions/request_method_x.dart';
 import 'package:hallo/core/helpers/response_helper.dart';
 import 'package:hallo/core/jwt/jwt_service.dart';
 import 'package:hallo/features/users/domain/usecases/get_all_users.dart';
 
-class UserResponse {
-  const UserResponse._();
+class UserRequest {
+  const UserRequest._();
 
-  static Future<Response> get(RequestContext context) async {
-    final requestMethod = context.request.method;
-    if (requestMethod.isGet) {
-      return _getAllUsers(context);
-    } else {
-      return ResponseHelper.methodNotAllowed();
-    }
+  static Future<Response> methodGET(RequestContext context) async {
+    return _getAllUsers(context);
   }
 
   static Future<Response> _getAllUsers(RequestContext context) async {
-    final middleWareService = context.read<JwtService>();
-    final verifyToken = await middleWareService.verifyToken(context);
+    final middleWare= context.read<JwtService>();
+    final verifyToken = await middleWare.verifyToken(context);
     final getAllUsersUsescase = GetAllUsers();
 
     if (!verifyToken) {
