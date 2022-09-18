@@ -5,7 +5,7 @@ import 'package:hallo/features/users/presentations/users_request.dart';
 
 Future<Response> onRequest(RequestContext context) async {
   if (context.HttpMethodGet) {
-    final response = await UserRequest.methodGET(context);
+    final response = await UserRequest.getUsers(context);
     return response;
   }
   return ResponseHelper.methodNotAllowed();

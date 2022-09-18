@@ -7,7 +7,7 @@ import 'package:hallo/features/users/domain/usecases/get_all_users.dart';
 class UserRequest {
   const UserRequest._();
 
-  static Future<Response> methodGET(RequestContext context) async {
+  static Future<Response> getUsers(RequestContext context) async {
     return _getAllUsers(context);
   }
 

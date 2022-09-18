@@ -5,7 +5,7 @@ import 'package:hallo/features/login/presentations/login_request.dart';
 
 Future<Response> onRequest(RequestContext context) async {
   if (context.HttpMethodPost) {
-    final response = await LoginRequest.methodPOST(context);
+    final response = await LoginRequest.loginUser(context);
     return response;
   }
   return ResponseHelper.methodNotAllowed();

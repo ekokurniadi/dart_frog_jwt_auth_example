@@ -10,7 +10,7 @@ import 'package:hallo/features/users/domain/usecases/get_all_users.dart';
 class LoginRequest {
   const LoginRequest._();
 
-  static Future<Response> methodPOST(RequestContext context) async {
+  static Future<Response> loginUser(RequestContext context) async {
     final middleWare = context.read<JwtService>();
     final randomNumber = math.Random().nextInt(999);
     final getAllUsersUsescase = GetAllUsers();
