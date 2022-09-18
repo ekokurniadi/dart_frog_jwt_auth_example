@@ -4,7 +4,7 @@
 [![License: MIT][license_badge]][license_link]
 [![Powered by Dart Frog](https://img.shields.io/endpoint?url=https://tinyurl.com/dartfrog-badge)](https://dartfrog.vgv.dev)
 
-This is example Backend application with dart_frog and how to use JWT Authorization on Dart Frog
+This is a sample Backend application with dart_frog and how to use JWT Authorization in Dart Frog
 
 ## Api Documentation : 
 <a href="https://documenter.getpostman.com/view/9523574/2s7YmtERV9#20fb31ca-f276-41e7-b9e3-23c426d5806b" target="_blank"><img src="https://assets.getpostman.com/common-share/postman-logo-horizontal-320x132.png" /></a><br />
